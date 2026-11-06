@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winter Cup 2026</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080f19;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+}
+
+header {
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    background: #0c1725;
+    border-bottom: 1px solid #26374b;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    color: #50e6a1;
+}
+
+nav a {
+    color: #c4d0dc;
+    text-decoration: none;
+    margin-left: 28px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #50e6a1;
+}
+
+.hero {
+    min-height: 520px;
+    padding: 110px 8%;
+    background:
+    linear-gradient(90deg, #080f19 20%, #080f19bb 65%, #080f1970),
+    url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1600')
+    center/cover;
+}
+
+.tag {
+    display: inline-block;
+    padding: 9px 17px;
+    border-radius: 30px;
+    background: #183c32;
+    color: #50e6a1;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 8vw, 90px);
+    font-weight: 900;
+    line-height: 1;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: #50e6a1;
+}
+
+.hero p {
+    color: #bdc9d5;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+    background: #50e6a1;
+    color: #08131c;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 900;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    background: white;
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    font-size: 34px;
+    margin-bottom: 35px;
+}
+
+.section-title span {
+    color: #50e6a1;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: -45px;
+    position: relative;
+    padding: 0 8%;
+}
+
+.stat {
+    background: #122235;
+    border: 1px solid #263c51;
+    padding: 27px;
+    border-radius: 13px;
+    text-align: center;
+}
+
+.stat h2 {
+    color: #50e6a1;
+    font-size: 35px;
+}
+
+.stat p {
+    color: #aab9c8;
+}
+
+.teams {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 18px;
+}
+
+.team {
+    background: #122235;
+    border: 1px solid #263c51;
+    padding: 30px 15px;
+    text-align: center;
+    border-radius: 13px;
+    transition: .3s;
+}
+
+.team:hover {
+    transform: translateY(-7px);
+    border-color: #50e6a1;
+}
+
+.team .emoji {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.team p {
+    color: #9aabbc;
+    margin-top: 7px;
+}
+
+.matches {
+    display: grid;
+    gap: 15px;
+}
+
+.match {
+    background: #122235;
+    border: 1px solid #263c51;
+    border-radius: 12px;
+    padding: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.match strong {
+    font-size: 16px;
+}
+
+.match span {
+    color: #50e6a1;
+    font-weight: 800;
+}
+
+.match small {
+    color: #9aabbc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #122235;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 18px;
+    text-align: center;
+    border-bottom: 1px solid #263c51;
+}
+
+th {
+    color: #50e6a1;
+    background: #192d42;
+}
+
+td:first-child {
+    text-align: left;
+    font-weight: 700;
+}
+
+.highlight {
+    color: #50e6a1;
+    font-weight: 900;
+}
+
+footer {
+    background: #0c1725;
+    text-align: center;
+    padding: 35px;
+    color: #91a2b3;
+    border-top: 1px solid #26374b;
+}
+
+@media(max-width: 650px) {
+    header {
+        padding: 15px 5%;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px 0 0;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 90px 6%;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .stats {
+        padding: 0 6%;
+        grid-template-columns: 1fr;
+    }
+
+    .match {
+        flex-wrap: wrap;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 12px 6px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">❄ WINTER CUP</div>
+    <nav>
+        <a href="#teams">Teams</a>
+        <a href="#matches">Wedstrijden</a>
+        <a href="#standings">Stand</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <div class="tag">🏆 HET GROOTSTE WINTERTOERNOOI</div>
+    <h1>WINTER<br><span>CUP 2026</span></h1>
+    <p>Strijd. Passie. Voetbal. Wie wordt de kampioen?</p>
+    <a href="#teams" class="btn">ONTDEK HET TOERNOOI →</a>
+</div>
+
+<div class="stats">
+    <div class="stat">
+        <h2>8</h2>
+        <p>Teams</p>
+    </div>
+    <div class="stat">
+        <h2>12</h2>
+        <p>Wedstrijden</p>
+    </div>
+    <div class="stat">
+        <h2>1</h2>
+        <p>Kampioen</p>
+    </div>
+</div>
+
+<section id="teams">
+    <h2 class="section-title">DE <span>TEAMS</span></h2>
+
+    <div class="teams">
+        <div class="team">
+            <div class="emoji">🔴</div>
+            <h3>Red Lions</h3>
+            <p>Team 01</p>
+        </div>
+
+        <div class="team">
+            <div class="emoji">🔵</div>
+            <h3>Blue Warriors</h3>
+            <p>Team 02</p>
+        </div>
+
+        <div class="team">
+            <div class="emoji">🟢</div>
+            <h3>Green Eagles</h3>
+            <p>Team 03</p>
+        </div>
+
+        <div class="team">
+            <div class="emoji">⚫</div>
+            <h3>Black Panthers</h3>
+            <p>Team 04</p>
+        </div>
+
+        <div class="team">
+            <div class="emoji">🟡</div>
+            <h3>Golden Stars</h3>
+            <p>Team 05</p>
+        </div>
+
+        <div class="team">
+            <div class="emoji">⚪</div>
+            <h3>White Wolves</h3>
+            <p>Team 06</p>
+        </div>
+
+        <div class="team">
+            <div class="emoji">🟣</div>
+            <h3>Purple Kings</h3>
+            <p>Team 07</p>
+        </div>
+
+        <div class="team">
+            <div class="emoji">🟠</div>
+            <h3>Orange FC</h3>
+            <p>Team 08</p>
+        </div>
+    </div>
+</section>
+
+<section id="matches">
+    <h2 class="section-title">WEDSTRIJD <span>SCHEMA</span></h2>
+
+    <div class="matches">
+        <div class="match">
+            <strong>🔴 Red Lions</strong>
+            <span>VS</span>
+            <strong>🔵 Blue Warriors</strong>
+            <small>09:00</small>
+        </div>
+
+        <div class="match">
+            <strong>🟢 Green Eagles</strong>
+            <span>VS</span>
+            <strong>⚫ Black Panthers</strong>
+            <small>09:30</small>
+        </div>
+
+        <div class="match">
+            <strong>🟡 Golden Stars</strong>
+            <span>VS</span>
+            <strong>⚪ White Wolves</strong>
+            <small>10:00</small>
+        </div>
+
+        <div class="match">
+            <strong>🟣 Purple Kings</strong>
+            <span>VS</span>
+            <strong>🟠 Orange FC</strong>
+            <small>10:30</small>
+        </div>
+    </div>
+</section>
+
+<section id="standings">
+    <h2 class="section-title">TOERNOOI <span>STAND</span></h2>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Team</th>
+            <th>GS</th>
+            <th>DS</th>
+            <th>Punten</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>🔴 Red Lions</td>
+            <td>3</td>
+            <td>+5</td>
+            <td class="highlight">9</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>🔵 Blue Warriors</td>
+            <td>3</td>
+            <td>+3</td>
+            <td>7</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>🟢 Green Eagles</td>
+            <td>3</td>
+            <td>+1</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>⚫ Black Panthers</td>
+            <td>3</td>
+            <td>-4</td>
+            <td>1</td>
+        </tr>
+    </table>
+</section>
+
+<footer>
+    <h2>❄ WINTER CUP 2026</h2>
+    <p>One tournament. One champion. One trophy.</p>
+    <p style="margin-top:15px">© 2026 Winter Cup</p>
+</footer>
+
+</body>
+</html>
